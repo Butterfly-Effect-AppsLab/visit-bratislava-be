@@ -12,9 +12,10 @@ import java.util.UUID;
 @RequestMapping("/api/users")
 public class UserRestController {
 
-    @GetMapping("/me")
-    public UserDto currentUser() {
-        User user = new User(UUID.randomUUID(), "mockEmail", "mockName", "mockLastname");
-        return UserDto.fromUser(user);
-    }
+	@GetMapping("/me")
+	public UserDto currentUser() {
+		User user = new User(UUID.randomUUID(), "mockEmail", "mockName", "mockLastname");
+		return UserDto.fromUser(user);
+	}
+
 }
