@@ -12,12 +12,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class PlaceRestController implements IPlaceRestController {
 
 	@Autowired
-    PlaceApiService placeRestService;
+    PlaceApiService placeApiService;
 
 	@Override
     @GetMapping("/random")
 	public Place getRandomPlace() {
-		return placeRestService.getRandomPlace();
+		return placeApiService.getRandomPlace();
 	}
 
 }
