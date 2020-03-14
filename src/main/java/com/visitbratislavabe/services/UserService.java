@@ -17,8 +17,8 @@ public class UserService implements IUserService {
 	}
 
 	@Override
-	public User getOne(Long userId) {
-		return userRepository.getOne(userId);
+	public User findById(Long userId) {
+		return userRepository.findById(userId).get();
 	}
 
 }

@@ -6,6 +6,6 @@ public interface IUserService {
 
 	User save(User user);
 
-	User getOne(Long userId);
+	User findById(Long userId);
 
 }

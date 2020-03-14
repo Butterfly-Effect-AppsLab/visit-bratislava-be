@@ -13,8 +13,8 @@ public class UserRestController {
 	IUserService userService;
 
 	@GetMapping("/user/{userId}")
-	public User saveUser(@PathVariable Long userId) {
-		return userService.getOne(userId);
+	public User getUserDetail(@PathVariable Long userId) {
+		return userService.findById(userId);
 	}
 
 	@PostMapping("/create")
