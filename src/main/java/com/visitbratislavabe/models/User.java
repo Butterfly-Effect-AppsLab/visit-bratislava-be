@@ -12,6 +12,9 @@ public class User implements IUser {
 
 	private String lastName;
 
+	private String whatever;
+
+
 	public User(UUID id, String email, String firstName, String lastName) {
 		this.id = id;
 		this.email = email;
