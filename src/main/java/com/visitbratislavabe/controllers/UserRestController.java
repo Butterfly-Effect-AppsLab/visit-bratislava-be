@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 public class UserRestController {
 
 	@Autowired
-    IUserRepositoryService userRepositoryService;
+	IUserRepositoryService userRepositoryService;
 
 	@GetMapping("/user/{userId}")
 	public User getUserDetail(@PathVariable Long userId) {

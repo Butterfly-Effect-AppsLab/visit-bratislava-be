@@ -1,5 +1,8 @@
 package com.visitbratislavabe.models;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Place {
 
 	private String icon_url;
