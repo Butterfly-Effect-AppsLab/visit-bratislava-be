@@ -6,17 +6,18 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 @Service
-public class PlaceRestService {
+public class PlaceApiService implements IPlaceApiService {
 
 	private RestTemplate restTemplate;
 
 	public String placesApiUrl = "https://api.chucknorris.io/jokes/random";
 
-	public PlaceRestService(RestTemplateBuilder restTemplateBuilder) {
+	public PlaceApiService(RestTemplateBuilder restTemplateBuilder) {
 		this.restTemplate = restTemplateBuilder.build();
 	}
 
-	public Place getRandomPlace() {
+	@Override
+    public Place getRandomPlace() {
 		return this.restTemplate.getForObject(placesApiUrl, Place.class);
 	}
 

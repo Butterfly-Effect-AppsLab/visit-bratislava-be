@@ -3,7 +3,7 @@ package com.visitbratislavabe.models;
 import javax.persistence.Entity;
 
 @Entity
-public class Place {
+public class Place implements IPlace {
 
 	private String icon_url;
 
@@ -13,35 +13,43 @@ public class Place {
 
 	private String value;
 
-	public String getIcon_url() {
+	@Override
+    public String getIcon_url() {
 		return icon_url;
 	}
 
-	public void setIcon_url(String icon_url) {
+	@Override
+    public void setIcon_url(String icon_url) {
 		this.icon_url = icon_url;
 	}
 
-	public String getId() {
+	@Override
+    public String getId() {
 		return id;
 	}
 
-	public void setId(String id) {
+	@Override
+    public void setId(String id) {
 		this.id = id;
 	}
 
-	public String getUrl() {
+	@Override
+    public String getUrl() {
 		return url;
 	}
 
-	public void setUrl(String url) {
+	@Override
+    public void setUrl(String url) {
 		this.url = url;
 	}
 
-	public String getValue() {
+	@Override
+    public String getValue() {
 		return value;
 	}
 
-	public void setValue(String value) {
+	@Override
+    public void setValue(String value) {
 		this.value = value;
 	}
 

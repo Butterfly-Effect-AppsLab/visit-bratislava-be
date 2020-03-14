@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
-public class User {
+public class User implements IUser {
 
 	@Id
 	@GeneratedValue
@@ -26,15 +26,18 @@ public class User {
 		this.password = password;
 	}
 
-	public Long getId() {
+	@Override
+    public Long getId() {
 		return userId;
 	}
 
-	public String getEmail() {
+	@Override
+    public String getEmail() {
 		return email;
 	}
 
-	public String getUsername() {
+	@Override
+    public String getUsername() {
 		return username;
 	}
 
