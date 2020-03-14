@@ -8,14 +8,16 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class PlaceRestService {
 
-    private RestTemplate restTemplate;
-    public String placesApiUrl = "https://api.chucknorris.io/jokes/random";
+	private RestTemplate restTemplate;
 
-    public PlaceRestService(RestTemplateBuilder restTemplateBuilder) {
-        this.restTemplate = restTemplateBuilder.build();
-    }
+	public String placesApiUrl = "https://api.chucknorris.io/jokes/random";
 
-    public Place getRandomPlace() {
-        return this.restTemplate.getForObject(placesApiUrl, Place.class);
-    }
+	public PlaceRestService(RestTemplateBuilder restTemplateBuilder) {
+		this.restTemplate = restTemplateBuilder.build();
+	}
+
+	public Place getRandomPlace() {
+		return this.restTemplate.getForObject(placesApiUrl, Place.class);
+	}
+
 }
