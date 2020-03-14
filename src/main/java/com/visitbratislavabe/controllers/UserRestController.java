@@ -1,19 +1,25 @@
 package com.visitbratislavabe.controllers;
 
 import com.visitbratislavabe.models.User;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.UUID;
+import com.visitbratislavabe.services.IUserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/users")
 public class UserRestController {
 
-	@GetMapping("/me")
-	public User currentUser() {
-		return new User(UUID.randomUUID(), "mockEmail", "mockName", "mockLastname");
+	@Autowired
+	IUserService userService;
+
+	@GetMapping("/user/{userId}")
+	public User getUserDetail(@PathVariable Long userId) {
+		return userService.findById(userId);
+	}
+
+	@PostMapping("/create")
+	public User newUser(@RequestBody User user) {
+		return userService.save(user);
 	}
 
 }
