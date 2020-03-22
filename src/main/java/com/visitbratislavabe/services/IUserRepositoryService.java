@@ -2,7 +2,7 @@ package com.visitbratislavabe.services;
 
 import com.visitbratislavabe.dbmodels.UserDto;
 
-public interface IUserService {
+public interface IUserRepositoryService {
 
 	UserDto save(UserDto user);
 
