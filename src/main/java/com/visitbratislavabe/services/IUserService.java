@@ -1,11 +1,11 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.models.User;
+import com.visitbratislavabe.dbmodels.UserDto;
 
 public interface IUserService {
 
-	User save(User user);
+	UserDto save(UserDto user);
 
-	User findById(Long userId);
+	UserDto findById(Long userId);
 
 }
