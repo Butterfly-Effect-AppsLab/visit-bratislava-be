@@ -12,7 +12,7 @@ public class PlaceRepositoryService implements IPlaceRepositoryService {
 	PlaceRepository placeRepository;
 
 	@Override
-    public Iterable<PlaceDto> saveAll(Iterable<PlaceDto> places) {
+	public Iterable<PlaceDto> saveAll(Iterable<PlaceDto> places) {
 		return placeRepository.saveAll(places);
 	}
 

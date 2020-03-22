@@ -30,6 +30,16 @@ public class ItineraryRestController {
 		return itineraryRepositoryService.getItinerary(itineraryId);
 	}
 
+	@PutMapping("/{itineraryId}")
+	public void updateItinerary(@PathVariable Long itineraryId, @RequestBody ItineraryDto itinerary) {
+		itineraryRepositoryService.updateItinerary(itineraryId, itinerary);
+	}
+
+	@DeleteMapping("/{itineraryId}")
+	public void deleteItinerary(@PathVariable Long itineraryId) {
+		itineraryRepositoryService.deleteItinerary(itineraryId);
+	}
+
 	@GetMapping("/{itineraryId}/places")
 	public void getAllItineraryItems(@PathVariable Long itineraryId) {
 		itineraryRepositoryService.getAllItineraryPlaces(itineraryId);
