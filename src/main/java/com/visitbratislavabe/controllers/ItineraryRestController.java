@@ -1,7 +1,7 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.PlaceDto;
-import com.visitbratislavabe.services.PlaceApiService;
+import com.visitbratislavabe.dbmodels.ItineraryDto;
+import com.visitbratislavabe.services.ItineraryRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/places")
-public class PlaceRestController {
+@RequestMapping("/api/itineraries")
+public class ItineraryRestController {
 
 	@Autowired
-	PlaceApiService placeApiService;
+	ItineraryRepositoryService itineraryRepositoryService;
 
 	@GetMapping("/")
-	public List<PlaceDto> getAllPlaces() {
-		return placeApiService.getAllPlaces();
+	public List<ItineraryDto> getRecommended() {
+		return itineraryRepositoryService.getRecommended();
 	}
 
 }

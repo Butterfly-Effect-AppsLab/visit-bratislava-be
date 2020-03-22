@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.persistence.*;
 import java.util.Map;
+import java.util.Set;
 
 @Entity
 @Table(name = "places")
@@ -112,18 +113,18 @@ public class PlaceDto {
 		this.address = address;
 	}
 
-	public String getImageUrl() {
+	public String getImage() {
 		return image;
 	}
 
-	public void setImageUrl(String imageUrl) {
+	public void setImage(String imageUrl) {
 		this.image = imageUrl;
 	}
 
 	public PlaceDto() {
 	}
 
-	// @ManyToMany(mappedBy = "places")
-	// Set<ItineraryDto> itineraries;
+	@ManyToMany(mappedBy = "places")
+	Set<ItineraryDto> itineraries;
 
 }
