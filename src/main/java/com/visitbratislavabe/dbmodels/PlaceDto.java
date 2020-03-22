@@ -13,6 +13,8 @@ import java.util.Set;
 public class PlaceDto {
 
 	@Id
+	@GeneratedValue
+	@Column(columnDefinition = "serial")
 	private Long placeId;
 
 	private String name;
