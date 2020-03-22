@@ -1,10 +1,10 @@
-package com.visitbratislavabe.models;
+package com.visitbratislavabe.dbmodels;
 
 import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
-public class User {
+public class UserDto {
 
 	@Id
 	@GeneratedValue
@@ -17,10 +17,10 @@ public class User {
 
 	private String password;
 
-	public User() {
+	public UserDto() {
 	}
 
-	public User(String email, String username, String password) {
+	public UserDto(String email, String username, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
