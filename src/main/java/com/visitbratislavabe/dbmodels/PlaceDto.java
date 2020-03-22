@@ -51,6 +51,10 @@ public class PlaceDto {
 		this.image = (String) originalImage.get("url");
 	};
 
+	public Long getPlaceId() {
+		return placeId;
+	}
+
 	public String getName() {
 		return name;
 	}

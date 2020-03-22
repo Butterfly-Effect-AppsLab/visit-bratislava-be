@@ -12,14 +12,14 @@ public class UserRestController {
 	@Autowired
 	IUserRepositoryService userService;
 
-	@GetMapping("/user/{userId}")
-	public UserDto getUserDetail(@PathVariable Long userId) {
-		return userService.findById(userId);
+	@PostMapping("/")
+	public UserDto createNewUser(@RequestBody UserDto user) {
+		return userService.save(user);
 	}
 
-	@PostMapping("/create")
-	public UserDto newUser(@RequestBody UserDto user) {
-		return userService.save(user);
+	@GetMapping("/{userId}")
+	public UserDto getUserDetail(@PathVariable Long userId) {
+		return userService.findById(userId);
 	}
 
 }
