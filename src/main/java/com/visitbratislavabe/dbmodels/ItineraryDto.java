@@ -12,7 +12,11 @@ public class ItineraryDto {
 	@Column(columnDefinition = "serial")
 	private Long itineraryId;
 
-	private boolean recommended = true;
+	private String category;
+
+	public Long getItineraryId() {
+		return itineraryId;
+	}
 
 	@ManyToMany
 	@JoinTable(name = "place_like", joinColumns = @JoinColumn(name = "itineraryId"),
