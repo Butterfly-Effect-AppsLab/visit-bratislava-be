@@ -1,9 +1,11 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.models.User;
+import com.visitbratislavabe.dbmodels.UserDto;
 
 public interface IUserRestController {
-    User getUserDetail(Long userId);
 
-    User createNewUser(User user);
+	UserDto getUserDetail(Long userId);
+
+	UserDto createNewUser(UserDto user);
+
 }

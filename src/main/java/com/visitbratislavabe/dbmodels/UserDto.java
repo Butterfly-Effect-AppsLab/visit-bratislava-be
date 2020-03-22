@@ -1,10 +1,10 @@
-package com.visitbratislavabe.models;
+package com.visitbratislavabe.dbmodels;
 
 import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
-public class User implements IUser {
+public class UserDto implements IUserDto {
 
 	@Id
 	@GeneratedValue
@@ -17,27 +17,27 @@ public class User implements IUser {
 
 	private String password;
 
-	public User() {
+	public UserDto() {
 	}
 
-	public User(String email, String username, String password) {
+	public UserDto(String email, String username, String password) {
 		this.email = email;
 		this.username = username;
 		this.password = password;
 	}
 
 	@Override
-    public Long getId() {
+	public Long getId() {
 		return userId;
 	}
 
 	@Override
-    public String getEmail() {
+	public String getEmail() {
 		return email;
 	}
 
 	@Override
-    public String getUsername() {
+	public String getUsername() {
 		return username;
 	}
 

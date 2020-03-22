@@ -1,7 +1,9 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.models.Place;
+import com.visitbratislavabe.services.utils.PlacesResponseWrapper;
 
 public interface IPlaceApiService {
-    Place getRandomPlace();
+
+	PlacesResponseWrapper getAllPlaces();
+
 }
