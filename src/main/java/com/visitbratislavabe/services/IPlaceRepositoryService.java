@@ -2,8 +2,10 @@ package com.visitbratislavabe.services;
 
 import com.visitbratislavabe.dbmodels.PlaceDto;
 
+import java.util.List;
+
 public interface IPlaceRepositoryService {
 
-	Iterable<PlaceDto> saveAll(Iterable<PlaceDto> places);
+	List<PlaceDto> getAllByCategory(String category);
 
 }

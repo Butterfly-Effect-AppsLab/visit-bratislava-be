@@ -19,7 +19,7 @@ public class PlaceDto {
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition = "serial")
-	private Long placeId;
+	private long placeId;
 
 	private String name;
 
@@ -55,7 +55,7 @@ public class PlaceDto {
 		this.image = (String) originalImage.get("url");
 	};
 
-	public Long getPlaceId() {
+	public long getPlaceId() {
 		return placeId;
 	}
 
