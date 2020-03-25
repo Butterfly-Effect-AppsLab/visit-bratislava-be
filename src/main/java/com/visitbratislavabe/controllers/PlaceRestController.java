@@ -18,14 +18,20 @@ public class PlaceRestController {
 	@Autowired
 	PlaceRepositoryService placeRepositoryService;
 
-	@GetMapping("/")
-	public List<PlaceDto> getAllPlaces() {
-		return placeApiService.getAllPlaces();
+	@GetMapping("")
+	public List<PlaceDto> getAllByCategory(@RequestParam String category) {
+		return placeRepositoryService.getAllByCategory(category);
 	}
 
-	@PostMapping("/saveAll")
-	public Iterable<PlaceDto> saveAllPlaces(@RequestBody Iterable<PlaceDto> places) {
-		return placeRepositoryService.saveAll(places);
+	@GetMapping("/{placeId}")
+	public PlaceDto getAllById(@PathVariable long placeId) {
+		return placeRepositoryService.getById(placeId);
+	}
+
+	// TODO: delete this endpoint once data are fetched from database
+	@GetMapping("/rapid-api")
+	public List<PlaceDto> getAllPlaces() {
+		return placeApiService.getAllPlaces();
 	}
 
 }
