@@ -1,9 +1,14 @@
 package com.visitbratislavabe.dbmodels;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Table(name = "users")
 @Entity
+@Getter
+@Setter
 public class UserDto {
 
 	@Id
@@ -15,27 +20,7 @@ public class UserDto {
 
 	private String username;
 
-	private String password;
-
 	public UserDto() {
-	}
-
-	public UserDto(String email, String username, String password) {
-		this.email = email;
-		this.username = username;
-		this.password = password;
-	}
-
-	public Long getId() {
-		return userId;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public String getUsername() {
-		return username;
 	}
 
 }

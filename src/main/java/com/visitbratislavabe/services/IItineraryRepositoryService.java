@@ -3,20 +3,20 @@ package com.visitbratislavabe.services;
 import com.visitbratislavabe.dbmodels.ItineraryDto;
 import com.visitbratislavabe.dbmodels.PlaceDto;
 
+import java.util.List;
+
 public interface IItineraryRepositoryService {
 
-	Iterable<ItineraryDto> getItineraries(String category);
+	List<ItineraryDto> getAllByCategory(String category);
 
-	ItineraryDto getItinerary(Long itineraryId);
+	ItineraryDto getById(long itineraryId);
 
-	ItineraryDto saveItinerary(ItineraryDto itinerary);
+	ItineraryDto save(ItineraryDto itinerary);
 
-	ItineraryDto updateItinerary(Long itineraryId, ItineraryDto itinerary);
+	long delete(long itineraryId);
 
-	void deleteItinerary(Long itineraryId);
+	void getAllItineraryPlaces(long itineraryId);
 
-	void getAllItineraryPlaces(Long itineraryId);
-
-	void addPlaceToItinerary(Long itineraryId, PlaceDto place);
+	void addPlaceToItinerary(long itineraryId, PlaceDto place);
 
 }

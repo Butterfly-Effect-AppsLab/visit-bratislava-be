@@ -47,6 +47,7 @@ public class PlaceDto {
 	@Transient
 	private Map<String, Object> originalImage;
 
+	// TODO: this part will be removed when database will be created
 	@SuppressWarnings("unchecked")
 	@JsonProperty("photo")
 	private void unpackNested(Map<String, Object> photo) {
@@ -54,10 +55,6 @@ public class PlaceDto {
 		this.originalImage = (Map<String, Object>) imagesObject.get("original");
 		this.image = (String) originalImage.get("url");
 	};
-
-	public long getPlaceId() {
-		return placeId;
-	}
 
 	public PlaceDto() {
 	}

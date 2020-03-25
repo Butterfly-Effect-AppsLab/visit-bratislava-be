@@ -6,6 +6,6 @@ public interface IUserRepositoryService {
 
 	UserDto save(UserDto user);
 
-	UserDto findById(Long userId);
+	UserDto getById(long userId);
 
 }
