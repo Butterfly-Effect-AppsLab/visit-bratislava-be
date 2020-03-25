@@ -46,7 +46,7 @@ public class ItineraryRestController {
 	}
 
 	@PostMapping("/{itineraryId}/places")
-	public void addItemToItinerary(@PathVariable Long itineraryId, @RequestBody PlaceDto place) {
+	public void addPlaceToItinerary(@PathVariable Long itineraryId, @RequestBody PlaceDto place) {
 		itineraryRepositoryService.addPlaceToItinerary(itineraryId, place);
 	}
 
