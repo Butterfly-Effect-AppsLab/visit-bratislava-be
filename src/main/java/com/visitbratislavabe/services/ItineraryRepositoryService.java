@@ -6,6 +6,8 @@ import com.visitbratislavabe.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ItineraryRepositoryService implements IItineraryRepositoryService {
 
@@ -13,43 +15,36 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	ItineraryRepository itineraryRepository;
 
 	@Override
-	public Iterable<ItineraryDto> getItineraries(String category) {
-		return itineraryRepository.findAll();
+	public List<ItineraryDto> getAllByCategory(String category) {
+		return itineraryRepository.getAllByCategory(category);
 	}
 
 	@Override
-	public ItineraryDto getItinerary(Long itineraryId) {
-		return itineraryRepository.findById(itineraryId).get();
+	public ItineraryDto getById(long itineraryId) {
+		return itineraryRepository.getById(itineraryId);
 	}
 
 	@Override
-	public ItineraryDto saveItinerary(ItineraryDto itinerary) {
+	public ItineraryDto save(ItineraryDto itinerary) {
 		return itineraryRepository.save(itinerary);
 	}
 
-	// TODO this method is just a template it will use different submethod and return
-	// value in the future
 	@Override
-	public ItineraryDto updateItinerary(Long itineraryId, ItineraryDto itinerary) {
-		return itineraryRepository.findById(itineraryId).get();
-	}
-
-	@Override
-	public void deleteItinerary(Long itineraryId) {
-		itineraryRepository.deleteById(itineraryId);
+	public long delete(long itineraryId) {
+		return itineraryRepository.delete(itineraryId);
 	}
 
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
 	@Override
-	public void getAllItineraryPlaces(Long itineraryId) {
+	public void getAllItineraryPlaces(long itineraryId) {
 		itineraryRepository.findAll();
 	}
 
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
 	@Override
-	public void addPlaceToItinerary(Long itineraryId, PlaceDto place) {
+	public void addPlaceToItinerary(long itineraryId, PlaceDto place) {
 		itineraryRepository.findAll();
 	}
 

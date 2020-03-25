@@ -17,8 +17,8 @@ public class UserRepositoryService implements IUserRepositoryService {
 	}
 
 	@Override
-	public UserDto findById(Long userId) {
-		return userRepository.findById(userId).get();
+	public UserDto getById(long userId) {
+		return userRepository.getById(userId);
 	}
 
 }

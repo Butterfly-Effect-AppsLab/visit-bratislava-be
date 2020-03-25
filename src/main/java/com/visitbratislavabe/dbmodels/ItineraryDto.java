@@ -1,10 +1,15 @@
 package com.visitbratislavabe.dbmodels;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
 @Table(name = "itineraries")
+@Getter
+@Setter
 public class ItineraryDto {
 
 	@Id
@@ -13,10 +18,6 @@ public class ItineraryDto {
 	private Long itineraryId;
 
 	private String category;
-
-	public Long getItineraryId() {
-		return itineraryId;
-	}
 
 	@ManyToMany
 	@JoinTable(name = "place_like", joinColumns = @JoinColumn(name = "itineraryId"),

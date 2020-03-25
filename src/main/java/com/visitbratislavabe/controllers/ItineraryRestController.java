@@ -15,38 +15,33 @@ public class ItineraryRestController {
 	@Autowired
 	ItineraryRepositoryService itineraryRepositoryService;
 
-	@GetMapping("/")
-	public Iterable<ItineraryDto> getItineraries(@RequestParam String category) {
-		return itineraryRepositoryService.getItineraries(category);
+	@GetMapping("")
+	public List<ItineraryDto> getAllByCategory(@RequestParam String category) {
+		return itineraryRepositoryService.getAllByCategory(category);
 	}
 
-	@PostMapping("/")
-	public ItineraryDto saveItinerary(@RequestBody ItineraryDto itinerary) {
-		return itineraryRepositoryService.saveItinerary(itinerary);
+	@PostMapping("")
+	public ItineraryDto createNew(@RequestBody ItineraryDto itinerary) {
+		return itineraryRepositoryService.save(itinerary);
 	}
 
 	@GetMapping("/{itineraryId}")
 	public ItineraryDto getItinerary(@PathVariable Long itineraryId) {
-		return itineraryRepositoryService.getItinerary(itineraryId);
-	}
-
-	@PutMapping("/{itineraryId}")
-	public void updateItinerary(@PathVariable Long itineraryId, @RequestBody ItineraryDto itinerary) {
-		itineraryRepositoryService.updateItinerary(itineraryId, itinerary);
+		return itineraryRepositoryService.getById(itineraryId);
 	}
 
 	@DeleteMapping("/{itineraryId}")
-	public void deleteItinerary(@PathVariable Long itineraryId) {
-		itineraryRepositoryService.deleteItinerary(itineraryId);
+	public void deleteItinerary(@PathVariable long itineraryId) {
+		itineraryRepositoryService.delete(itineraryId);
 	}
 
 	@GetMapping("/{itineraryId}/places")
-	public void getAllItineraryItems(@PathVariable Long itineraryId) {
+	public void getAllItineraryItems(@PathVariable long itineraryId) {
 		itineraryRepositoryService.getAllItineraryPlaces(itineraryId);
 	}
 
 	@PostMapping("/{itineraryId}/places")
-	public void addPlaceToItinerary(@PathVariable Long itineraryId, @RequestBody PlaceDto place) {
+	public void addPlaceToItinerary(@PathVariable long itineraryId, @RequestBody PlaceDto place) {
 		itineraryRepositoryService.addPlaceToItinerary(itineraryId, place);
 	}
 
