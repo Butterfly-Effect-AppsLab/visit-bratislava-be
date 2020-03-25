@@ -2,6 +2,8 @@ package com.visitbratislavabe.dbmodels;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Getter;
+import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.Map;
@@ -10,6 +12,8 @@ import java.util.Set;
 @Entity
 @Table(name = "places")
 @JsonIgnoreProperties(ignoreUnknown = true)
+@Getter
+@Setter
 public class PlaceDto {
 
 	@Id
@@ -53,78 +57,6 @@ public class PlaceDto {
 
 	public Long getPlaceId() {
 		return placeId;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getLatitude() {
-		return latitude;
-	}
-
-	public void setLatitude(String latitude) {
-		this.latitude = latitude;
-	}
-
-	public String getLongitude() {
-		return longitude;
-	}
-
-	public void setLongitude(String longitude) {
-		this.longitude = longitude;
-	}
-
-	public String getLocationString() {
-		return locationString;
-	}
-
-	public void setLocationString(String locationString) {
-		this.locationString = locationString;
-	}
-
-	public String getRankingCategory() {
-		return rankingCategory;
-	}
-
-	public void setRankingCategory(String rankingCategory) {
-		this.rankingCategory = rankingCategory;
-	}
-
-	public String getRating() {
-		return rating;
-	}
-
-	public void setRating(String rating) {
-		this.rating = rating;
-	}
-
-	public String getWebsite() {
-		return website;
-	}
-
-	public void setWebsite(String website) {
-		this.website = website;
-	}
-
-	public String getAddress() {
-		return address;
-	}
-
-	public void setAddress(String address) {
-		this.address = address;
-	}
-
-	public String getImage() {
-		return image;
-	}
-
-	public void setImage(String imageUrl) {
-		this.image = imageUrl;
 	}
 
 	public PlaceDto() {
