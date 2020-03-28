@@ -26,7 +26,7 @@ public class ItineraryRestController {
 	}
 
 	@GetMapping("/{itineraryId}")
-	public ItineraryDto getItinerary(@PathVariable Long itineraryId) {
+	public ItineraryDto getItinerary(@PathVariable long itineraryId) {
 		return itineraryRepositoryService.getById(itineraryId);
 	}
 
