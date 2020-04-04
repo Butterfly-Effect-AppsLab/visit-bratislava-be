@@ -23,6 +23,11 @@ public class PlaceRestController {
 		return placeRepositoryService.getAllByCategory(category);
 	}
 
+	@PostMapping("")
+	public List<PlaceDto> saveAll(@RequestBody List<PlaceDto> places) {
+		return placeRepositoryService.saveAll(places);
+	}
+
 	@GetMapping("/{placeId}")
 	public PlaceDto getAllById(@PathVariable long placeId) {
 		return placeRepositoryService.getById(placeId);

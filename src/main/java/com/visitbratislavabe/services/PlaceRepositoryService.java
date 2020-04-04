@@ -17,6 +17,10 @@ public class PlaceRepositoryService implements IPlaceRepositoryService {
 		return placeRepository.getById(placeId);
 	}
 
+	public List<PlaceDto> saveAll(List<PlaceDto> places) {
+		return placeRepository.saveAll(places);
+	}
+
 	public List<PlaceDto> getAllByCategory(String category) {
 		return placeRepository.getAllByCategory(category);
 	}
