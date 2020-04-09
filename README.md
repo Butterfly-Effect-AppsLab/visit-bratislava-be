@@ -12,5 +12,8 @@ Backend repo for visit bratislava app.
 ####Start server
     - `mvn spring-boot:run`
     
+####Run tests
+    - `mvn test`
+    
  
 
