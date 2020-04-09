@@ -13,10 +13,14 @@ public interface IItineraryRepositoryService {
 
 	ItineraryDto save(ItineraryDto itinerary);
 
+	ItineraryDto update(ItineraryDto itinerary);
+
 	long delete(long itineraryId);
 
 	void getAllItineraryPlaces(long itineraryId);
 
-	void addPlaceToItinerary(long itineraryId, PlaceDto place);
+	void addPlace(long itineraryId, long placeId);
+
+	void removePlace(long itineraryId, long placeId);
 
 }

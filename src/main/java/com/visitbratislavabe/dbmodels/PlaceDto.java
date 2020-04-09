@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "places")
+@Table(name = "place")
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
@@ -17,7 +17,7 @@ public class PlaceDto {
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition = "serial")
-	private long placeId;
+	private long id;
 
 	private String name;
 
@@ -41,6 +41,6 @@ public class PlaceDto {
 	}
 
 	@ManyToMany(mappedBy = "places")
-	Set<ItineraryDto> itineraries;
+	private Set<ItineraryDto> itineraries;
 
 }
