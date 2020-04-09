@@ -37,14 +37,24 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
 	@Override
-	public void getAllItineraryPlaces(long itineraryId) {
-		itineraryRepository.findAll();
+	public ItineraryDto update(ItineraryDto itinerary) {
+		return itineraryRepository.save(itinerary);
 	}
+
+	@Override
+	public void addPlace(long itineraryId, long placeId) {
+		itineraryRepository.addPlace(itineraryId, placeId);
+	}
+
+	@Override
+	public void removePlace(long itineraryId, long placeId) {
+		itineraryRepository.removePlace(itineraryId, placeId);
+	};
 
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
 	@Override
-	public void addPlaceToItinerary(long itineraryId, PlaceDto place) {
+	public void getAllItineraryPlaces(long itineraryId) {
 		itineraryRepository.findAll();
 	}
 

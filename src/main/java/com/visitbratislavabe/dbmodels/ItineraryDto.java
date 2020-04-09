@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "itineraries")
+@Table(name = "itinerary")
 @Getter
 @Setter
 public class ItineraryDto {
@@ -15,13 +15,15 @@ public class ItineraryDto {
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition = "serial")
-	private long itineraryId;
+	private long id;
+
+	private String image;
 
 	private String category;
 
 	@ManyToMany
-	@JoinTable(name = "place_itinerary", joinColumns = @JoinColumn(name = "itineraryId"),
-			inverseJoinColumns = @JoinColumn(name = "placeId"))
+	@JoinTable(name = "itinerary_places", joinColumns = @JoinColumn(name = "itinerary_id"),
+			inverseJoinColumns = @JoinColumn(name = "place_id"))
 	private Set<PlaceDto> places;
 
 }

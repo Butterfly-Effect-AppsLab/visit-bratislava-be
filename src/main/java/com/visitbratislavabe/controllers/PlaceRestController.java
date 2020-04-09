@@ -29,7 +29,7 @@ public class PlaceRestController {
 	}
 
 	@GetMapping("/{placeId}")
-	public PlaceDto getAllById(@PathVariable long placeId) {
+	public PlaceDto getById(@PathVariable long placeId) {
 		return placeRepositoryService.getById(placeId);
 	}
 
