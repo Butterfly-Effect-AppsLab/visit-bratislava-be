@@ -14,7 +14,7 @@ public class User {
 	@Id
 	@GeneratedValue
 	@Column(columnDefinition = "serial")
-	private Long userId;
+	private Long id;
 
 	private String email;
 

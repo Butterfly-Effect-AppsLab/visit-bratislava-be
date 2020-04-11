@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface IPlaceRepositoryService {
 
-	List<Place> getAllByCategory(String category);
+	List<Place> getByCategory(String category);
 
 }

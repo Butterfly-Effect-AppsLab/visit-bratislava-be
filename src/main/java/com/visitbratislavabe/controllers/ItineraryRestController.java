@@ -1,6 +1,7 @@
 package com.visitbratislavabe.controllers;
 
 import com.visitbratislavabe.dbmodels.Itinerary;
+import com.visitbratislavabe.dbmodels.Place;
 import com.visitbratislavabe.services.ItineraryRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -29,24 +30,28 @@ public class ItineraryRestController {
 		return itineraryRepositoryService.getById(itineraryId);
 	}
 
-	@PutMapping("/{itineraryId}")
+	@PutMapping("/")
 	public Itinerary updateItinerary(@RequestBody Itinerary itinerary) {
 		return itineraryRepositoryService.update(itinerary);
 	}
 
 	@DeleteMapping("/{itineraryId}")
 	public void deleteItinerary(@PathVariable long itineraryId) {
-		itineraryRepositoryService.delete(itineraryId);
+		itineraryRepositoryService.deleteById(itineraryId);
 	}
 
-	@PostMapping("/{itineraryId}/places/{placeId}")
-	public void addPlace(@PathVariable long itineraryId, @PathVariable long placeId) {
-		itineraryRepositoryService.addPlace(itineraryId, placeId);
+	@PostMapping("/{itineraryId}/places")
+	public void addPlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
+		Itinerary itinerary = itineraryRepositoryService.getById(itineraryId);
+		itinerary.addPlaces(places);
+		itineraryRepositoryService.save(itinerary);
 	}
 
-	@PostMapping("/{itineraryId}/places/{placeId}")
-	public void removePlace(@PathVariable long itineraryId, @PathVariable long placeId) {
-		itineraryRepositoryService.removePlace(itineraryId, placeId);
+	@DeleteMapping("/{itineraryId}/places")
+	public void removePlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
+		Itinerary itinerary = itineraryRepositoryService.getById(itineraryId);
+		itinerary.removePlaces(places);
+		itineraryRepositoryService.save(itinerary);
 	}
 
 	@GetMapping("/{itineraryId}/places")

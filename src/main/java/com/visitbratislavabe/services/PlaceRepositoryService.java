@@ -21,8 +21,8 @@ public class PlaceRepositoryService implements IPlaceRepositoryService {
 		return placeRepository.saveAll(places);
 	}
 
-	public List<Place> getAllByCategory(String category) {
-		return placeRepository.getAllByCategory(category);
+	public List<Place> getByCategory(String category) {
+		return placeRepository.getByCategory(category);
 	}
 
 }
