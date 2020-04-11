@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.UserDto;
+import com.visitbratislavabe.dbmodels.User;
 import com.visitbratislavabe.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,12 +12,12 @@ public class UserRepositoryService implements IUserRepositoryService {
 	private UserRepository userRepository;
 
 	@Override
-	public UserDto save(UserDto user) {
+	public User save(User user) {
 		return userRepository.save(user);
 	}
 
 	@Override
-	public UserDto getById(long userId) {
+	public User getById(long userId) {
 		return userRepository.getById(userId);
 	}
 

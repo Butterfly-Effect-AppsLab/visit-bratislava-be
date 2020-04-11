@@ -1,18 +1,18 @@
 package com.visitbratislavabe.repositories;
 
-import com.visitbratislavabe.dbmodels.ItineraryDto;
+import com.visitbratislavabe.dbmodels.Itinerary;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
 
-public interface ItineraryRepository extends JpaRepository<ItineraryDto, Long> {
+public interface ItineraryRepository extends JpaRepository<Itinerary, Long> {
 
 	@Query(value = "SELECT * FROM itinerary WHERE category = ?1", nativeQuery = true)
-	List<ItineraryDto> getAllByCategory(String category);
+	List<Itinerary> getAllByCategory(String category);
 
 	@Query(value = "SELECT * FROM itinerary WHERE id = ?1", nativeQuery = true)
-	ItineraryDto getById(long itineraryId);
+    Itinerary getById(long itineraryId);
 
 	@Query(value = "DELETE FROM itinerary WHERE id = ?1", nativeQuery = true)
 	long delete(long itineraryId);

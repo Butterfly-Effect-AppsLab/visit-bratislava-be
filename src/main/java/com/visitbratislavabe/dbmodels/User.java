@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Entity
 @Getter
 @Setter
-public class UserDto {
+public class User {
 
 	@Id
 	@GeneratedValue
@@ -20,7 +20,7 @@ public class UserDto {
 
 	private String username;
 
-	public UserDto() {
+	public User() {
 	}
 
 }

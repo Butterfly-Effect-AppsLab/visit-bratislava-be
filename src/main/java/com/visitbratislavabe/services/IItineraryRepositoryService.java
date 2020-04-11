@@ -1,19 +1,18 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.ItineraryDto;
-import com.visitbratislavabe.dbmodels.PlaceDto;
+import com.visitbratislavabe.dbmodels.Itinerary;
 
 import java.util.List;
 
 public interface IItineraryRepositoryService {
 
-	List<ItineraryDto> getAllByCategory(String category);
+	List<Itinerary> getAllByCategory(String category);
 
-	ItineraryDto getById(long itineraryId);
+	Itinerary getById(long itineraryId);
 
-	ItineraryDto save(ItineraryDto itinerary);
+	Itinerary save(Itinerary itinerary);
 
-	ItineraryDto update(ItineraryDto itinerary);
+	Itinerary update(Itinerary itinerary);
 
 	long delete(long itineraryId);
 

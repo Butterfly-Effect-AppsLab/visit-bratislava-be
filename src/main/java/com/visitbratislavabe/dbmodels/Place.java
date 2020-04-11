@@ -12,7 +12,7 @@ import java.util.Set;
 @JsonIgnoreProperties(ignoreUnknown = true)
 @Getter
 @Setter
-public class PlaceDto {
+public class Place {
 
 	@Id
 	@GeneratedValue
@@ -37,10 +37,10 @@ public class PlaceDto {
 
 	private String rankingCategory;
 
-	public PlaceDto() {
+	public Place() {
 	}
 
 	@ManyToMany(mappedBy = "places")
-	private Set<ItineraryDto> itineraries;
+	private Set<Itinerary> itineraries;
 
 }

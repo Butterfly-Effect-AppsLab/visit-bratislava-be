@@ -1,6 +1,6 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.PlaceDto;
+import com.visitbratislavabe.dbmodels.Place;
 import com.visitbratislavabe.services.PlaceApiService;
 import com.visitbratislavabe.services.PlaceRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,23 +19,23 @@ public class PlaceRestController {
 	PlaceRepositoryService placeRepositoryService;
 
 	@GetMapping("")
-	public List<PlaceDto> getAllByCategory(@RequestParam String category) {
+	public List<Place> getAllByCategory(@RequestParam String category) {
 		return placeRepositoryService.getAllByCategory(category);
 	}
 
 	@PostMapping("")
-	public List<PlaceDto> saveAll(@RequestBody List<PlaceDto> places) {
+	public List<Place> saveAll(@RequestBody List<Place> places) {
 		return placeRepositoryService.saveAll(places);
 	}
 
 	@GetMapping("/{placeId}")
-	public PlaceDto getById(@PathVariable long placeId) {
+	public Place getById(@PathVariable long placeId) {
 		return placeRepositoryService.getById(placeId);
 	}
 
 	// TODO: delete this endpoint once data are fetched from database
 	@GetMapping("/rapid-api")
-	public List<PlaceDto> getAllPlaces() {
+	public List<Place> getAllPlaces() {
 		return placeApiService.getAllPlaces();
 	}
 
