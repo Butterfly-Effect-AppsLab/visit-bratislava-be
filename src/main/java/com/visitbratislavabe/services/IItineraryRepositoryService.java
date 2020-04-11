@@ -14,12 +14,8 @@ public interface IItineraryRepositoryService {
 
 	Itinerary update(Itinerary itinerary);
 
-	long delete(long itineraryId);
+	long deleteById(long itineraryId);
 
 	void getAllItineraryPlaces(long itineraryId);
-
-	void addPlace(long itineraryId, long placeId);
-
-	void removePlace(long itineraryId, long placeId);
 
 }

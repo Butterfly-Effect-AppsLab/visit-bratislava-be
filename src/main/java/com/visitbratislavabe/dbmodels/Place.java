@@ -35,12 +35,9 @@ public class Place {
 
 	private String locationString;
 
-	private String rankingCategory;
+	private String category;
 
 	public Place() {
 	}
-
-	@ManyToMany(mappedBy = "places")
-	private Set<Itinerary> itineraries;
 
 }

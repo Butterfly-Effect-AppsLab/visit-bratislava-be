@@ -29,8 +29,8 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	}
 
 	@Override
-	public long delete(long itineraryId) {
-		return itineraryRepository.delete(itineraryId);
+	public long deleteById(long itineraryId) {
+		return itineraryRepository.deleteById(itineraryId);
 	}
 
 	// TODO this method is just a template it will use different submethod and return
@@ -39,16 +39,6 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	public Itinerary update(Itinerary itinerary) {
 		return itineraryRepository.save(itinerary);
 	}
-
-	@Override
-	public void addPlace(long itineraryId, long placeId) {
-		itineraryRepository.addPlace(itineraryId, placeId);
-	}
-
-	@Override
-	public void removePlace(long itineraryId, long placeId) {
-		itineraryRepository.removePlace(itineraryId, placeId);
-	};
 
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
