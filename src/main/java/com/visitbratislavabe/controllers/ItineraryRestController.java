@@ -1,6 +1,6 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.ItineraryDto;
+import com.visitbratislavabe.dbmodels.Itinerary;
 import com.visitbratislavabe.services.ItineraryRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -15,22 +15,22 @@ public class ItineraryRestController {
 	ItineraryRepositoryService itineraryRepositoryService;
 
 	@GetMapping("")
-	public List<ItineraryDto> getAllByCategory(@RequestParam String category) {
+	public List<Itinerary> getAllByCategory(@RequestParam String category) {
 		return itineraryRepositoryService.getAllByCategory(category);
 	}
 
 	@PostMapping("")
-	public ItineraryDto createNew(@RequestBody ItineraryDto itinerary) {
+	public Itinerary createNew(@RequestBody Itinerary itinerary) {
 		return itineraryRepositoryService.save(itinerary);
 	}
 
 	@GetMapping("/{itineraryId}")
-	public ItineraryDto getItinerary(@PathVariable long itineraryId) {
+	public Itinerary getItinerary(@PathVariable long itineraryId) {
 		return itineraryRepositoryService.getById(itineraryId);
 	}
 
 	@PutMapping("/{itineraryId}")
-	public ItineraryDto updateItinerary(@RequestBody ItineraryDto itinerary) {
+	public Itinerary updateItinerary(@RequestBody Itinerary itinerary) {
 		return itineraryRepositoryService.update(itinerary);
 	}
 

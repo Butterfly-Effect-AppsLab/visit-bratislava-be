@@ -1,6 +1,6 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.UserDto;
+import com.visitbratislavabe.dbmodels.User;
 import com.visitbratislavabe.services.IUserRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -13,12 +13,12 @@ public class UserRestController {
 	IUserRepositoryService userService;
 
 	@PostMapping("")
-	public UserDto createNewUser(@RequestBody UserDto user) {
+	public User createNewUser(@RequestBody User user) {
 		return userService.save(user);
 	}
 
 	@GetMapping("/{userId}")
-	public UserDto getUserDetail(@PathVariable long userId) {
+	public User getUserDetail(@PathVariable long userId) {
 		return userService.getById(userId);
 	}
 

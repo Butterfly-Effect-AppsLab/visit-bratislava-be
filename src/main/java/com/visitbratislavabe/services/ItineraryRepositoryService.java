@@ -1,7 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.ItineraryDto;
-import com.visitbratislavabe.dbmodels.PlaceDto;
+import com.visitbratislavabe.dbmodels.Itinerary;
 import com.visitbratislavabe.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +14,17 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	ItineraryRepository itineraryRepository;
 
 	@Override
-	public List<ItineraryDto> getAllByCategory(String category) {
+	public List<Itinerary> getAllByCategory(String category) {
 		return itineraryRepository.getAllByCategory(category);
 	}
 
 	@Override
-	public ItineraryDto getById(long itineraryId) {
+	public Itinerary getById(long itineraryId) {
 		return itineraryRepository.getById(itineraryId);
 	}
 
 	@Override
-	public ItineraryDto save(ItineraryDto itinerary) {
+	public Itinerary save(Itinerary itinerary) {
 		return itineraryRepository.save(itinerary);
 	}
 
@@ -37,7 +36,7 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	// TODO this method is just a template it will use different submethod and return
 	// value in the future
 	@Override
-	public ItineraryDto update(ItineraryDto itinerary) {
+	public Itinerary update(Itinerary itinerary) {
 		return itineraryRepository.save(itinerary);
 	}
 

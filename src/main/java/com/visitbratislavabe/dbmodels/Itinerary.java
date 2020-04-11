@@ -10,7 +10,7 @@ import java.util.Set;
 @Table(name = "itinerary")
 @Getter
 @Setter
-public class ItineraryDto {
+public class Itinerary {
 
 	@Id
 	@GeneratedValue
@@ -24,6 +24,6 @@ public class ItineraryDto {
 	@ManyToMany
 	@JoinTable(name = "itinerary_places", joinColumns = @JoinColumn(name = "itinerary_id"),
 			inverseJoinColumns = @JoinColumn(name = "place_id"))
-	private Set<PlaceDto> places;
+	private Set<Place> places;
 
 }
