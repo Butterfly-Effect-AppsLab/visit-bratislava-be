@@ -1,12 +1,13 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.Itinerary;
-import com.visitbratislavabe.dbmodels.Place;
+import com.visitbratislavabe.models.Itinerary;
+import com.visitbratislavabe.models.Place;
 import com.visitbratislavabe.services.ItineraryRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/api/itineraries")
@@ -15,14 +16,14 @@ public class ItineraryRestController {
 	@Autowired
 	ItineraryRepositoryService itineraryRepositoryService;
 
-	@GetMapping("")
-	public List<Itinerary> getAllByCategory(@RequestParam String category) {
-		return itineraryRepositoryService.getAllByCategory(category);
-	}
-
 	@PostMapping("")
 	public Itinerary createNew(@RequestBody Itinerary itinerary) {
 		return itineraryRepositoryService.save(itinerary);
+	}
+
+	@GetMapping("")
+	public List<Itinerary> getAllByCategory(@RequestParam String category) {
+		return itineraryRepositoryService.getAllByCategory(category);
 	}
 
 	@GetMapping("/{itineraryId}")
@@ -41,10 +42,11 @@ public class ItineraryRestController {
 	}
 
 	@PostMapping("/{itineraryId}/places")
-	public void addPlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
+	public Set<Place> addPlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
 		Itinerary itinerary = itineraryRepositoryService.getById(itineraryId);
 		itinerary.addPlaces(places);
 		itineraryRepositoryService.save(itinerary);
+		return itinerary.getPlaces();
 	}
 
 	@DeleteMapping("/{itineraryId}/places")

@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.Itinerary;
+import com.visitbratislavabe.models.Itinerary;
 import com.visitbratislavabe.repositories.ItineraryRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +29,8 @@ public class ItineraryRepositoryService implements IItineraryRepositoryService {
 	}
 
 	@Override
-	public long deleteById(long itineraryId) {
-		return itineraryRepository.deleteById(itineraryId);
+	public void deleteById(long itineraryId) {
+		itineraryRepository.deleteById(itineraryId);
 	}
 
 	// TODO this method is just a template it will use different submethod and return

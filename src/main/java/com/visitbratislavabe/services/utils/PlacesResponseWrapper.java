@@ -1,7 +1,7 @@
 package com.visitbratislavabe.services.utils;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.visitbratislavabe.dbmodels.Place;
+import com.visitbratislavabe.models.Place;
 
 import java.util.List;
 

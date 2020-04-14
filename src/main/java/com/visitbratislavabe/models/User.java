@@ -1,4 +1,4 @@
-package com.visitbratislavabe.dbmodels;
+package com.visitbratislavabe.models;
 
 import lombok.Getter;
 import lombok.Setter;
