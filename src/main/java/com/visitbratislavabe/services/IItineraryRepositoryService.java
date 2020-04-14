@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.Itinerary;
+import com.visitbratislavabe.models.Itinerary;
 
 import java.util.List;
 
@@ -14,7 +14,7 @@ public interface IItineraryRepositoryService {
 
 	Itinerary update(Itinerary itinerary);
 
-	long deleteById(long itineraryId);
+	void deleteById(long itineraryId);
 
 	void getAllItineraryPlaces(long itineraryId);
 

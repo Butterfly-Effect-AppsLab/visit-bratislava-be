@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.User;
+import com.visitbratislavabe.models.User;
 
 public interface IUserRepositoryService {
 

@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.User;
+import com.visitbratislavabe.models.User;
 import com.visitbratislavabe.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.visitbratislavabe.controllers;
 
-import com.visitbratislavabe.dbmodels.User;
+import com.visitbratislavabe.models.User;
 import com.visitbratislavabe.services.IUserRepositoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

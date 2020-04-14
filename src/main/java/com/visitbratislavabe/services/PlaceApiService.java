@@ -1,6 +1,6 @@
 package com.visitbratislavabe.services;
 
-import com.visitbratislavabe.dbmodels.Place;
+import com.visitbratislavabe.models.Place;
 import com.visitbratislavabe.services.utils.PlacesResponseWrapper;
 import org.springframework.stereotype.Service;
 

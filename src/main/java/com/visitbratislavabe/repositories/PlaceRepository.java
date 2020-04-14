@@ -1,6 +1,6 @@
 package com.visitbratislavabe.repositories;
 
-import com.visitbratislavabe.dbmodels.Place;
+import com.visitbratislavabe.models.Place;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
