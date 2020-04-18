@@ -15,6 +15,7 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import javax.ws.rs.core.MediaType;
 import java.util.List;
+import java.util.Set;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;

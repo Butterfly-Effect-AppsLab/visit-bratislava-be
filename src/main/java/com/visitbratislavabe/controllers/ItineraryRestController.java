@@ -31,7 +31,7 @@ public class ItineraryRestController {
 		return itineraryRepositoryService.getById(itineraryId);
 	}
 
-	@PutMapping("/")
+	@PutMapping("")
 	public Itinerary updateItinerary(@RequestBody Itinerary itinerary) {
 		return itineraryRepositoryService.update(itinerary);
 	}
@@ -42,23 +42,18 @@ public class ItineraryRestController {
 	}
 
 	@PostMapping("/{itineraryId}/places")
-	public Set<Place> addPlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
-		Itinerary itinerary = itineraryRepositoryService.getById(itineraryId);
-		itinerary.addPlaces(places);
-		itineraryRepositoryService.save(itinerary);
-		return itinerary.getPlaces();
+	public Set<Place> addPlaces(@PathVariable long itineraryId, @RequestBody List<Place> places) {
+		return itineraryRepositoryService.addPlaces(itineraryId, places);
 	}
 
 	@DeleteMapping("/{itineraryId}/places")
-	public void removePlace(@PathVariable long itineraryId, @RequestBody List<Place> places) {
-		Itinerary itinerary = itineraryRepositoryService.getById(itineraryId);
-		itinerary.removePlaces(places);
-		itineraryRepositoryService.save(itinerary);
+	public void removePlaces(@PathVariable long itineraryId, @RequestBody List<Place> places) {
+		itineraryRepositoryService.removePlaces(itineraryId, places);
 	}
 
 	@GetMapping("/{itineraryId}/places")
-	public void getAllItineraryPlaces(@PathVariable long itineraryId) {
-		itineraryRepositoryService.getAllItineraryPlaces(itineraryId);
+	public Set<Place> getAllItineraryPlaces(@PathVariable long itineraryId) {
+		return itineraryRepositoryService.getAllItineraryPlaces(itineraryId);
 	}
 
 }
