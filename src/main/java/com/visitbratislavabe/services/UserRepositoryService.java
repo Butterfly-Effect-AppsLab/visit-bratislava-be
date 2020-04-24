@@ -21,4 +21,9 @@ public class UserRepositoryService implements IUserRepositoryService {
 		return userRepository.getById(userId);
 	}
 
+	@Override
+	public User getByEmail(String email) { return userRepository.getByEmail(email); }
+
+	@Override
+	public boolean existsByEmail(String email) { return userRepository.existsByEmail(email); }
 }
