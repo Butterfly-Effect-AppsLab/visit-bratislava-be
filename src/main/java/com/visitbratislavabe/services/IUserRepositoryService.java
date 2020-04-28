@@ -8,7 +8,4 @@ public interface IUserRepositoryService {
 
 	User getById(long userId);
 
-	User getByEmail(String email);
-
-	boolean existsByEmail(String email);
 }

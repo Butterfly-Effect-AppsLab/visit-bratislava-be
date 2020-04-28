@@ -7,12 +7,13 @@ import lombok.Setter;
 @Setter
 public class ApiResponseWrapper {
 
-    private boolean success;
-    private String message;
+	private boolean success;
 
-    public ApiResponseWrapper(boolean success, String message) {
-        this.success = success;
-        this.message = message;
-    }
+	private String message;
+
+	public ApiResponseWrapper(boolean success, String message) {
+		this.success = success;
+		this.message = message;
+	}
 
 }

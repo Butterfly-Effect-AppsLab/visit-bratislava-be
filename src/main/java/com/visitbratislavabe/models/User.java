@@ -32,12 +32,6 @@ public class User {
 
 	private String imageUrl;
 
-	@NotNull
-	@Enumerated(EnumType.STRING)
-	private AuthProvider provider;
-
-	private String providerId;
-
 	public User() {
 	}
 
