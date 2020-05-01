@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -23,6 +24,10 @@ public class Itinerary {
 	private String image;
 
 	private String category;
+
+	private Date startDate;
+
+	private Date endDate;
 
 	@ManyToMany
 	@JoinTable(name = "itinerary_places", joinColumns = @JoinColumn(name = "itinerary_id"),
