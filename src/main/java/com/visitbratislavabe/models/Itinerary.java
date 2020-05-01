@@ -18,10 +18,6 @@ public class Itinerary {
 	@Column(columnDefinition = "serial")
 	private long id;
 
-	public long getId() {
-		return id;
-	}
-
 	private String description;
 
 	private String image;
@@ -33,10 +29,6 @@ public class Itinerary {
 			inverseJoinColumns = @JoinColumn(name = "place_id"))
 	private Set<Place> places;
 
-	public Set<Place> getPlaces() {
-		return places;
-	}
-
 	public void addPlaces(List<Place> placesToAdd) {
 		placesToAdd.forEach(place -> places.add(place));
 	}
@@ -46,13 +38,6 @@ public class Itinerary {
 	}
 
 	public Itinerary() {
-	}
-
-	public Itinerary(String description, String image, String category, Set<Place> places) {
-		this.description = description;
-		this.image = image;
-		this.category = category;
-		this.places = places;
 	}
 
 }
