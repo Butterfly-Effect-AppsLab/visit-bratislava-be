@@ -15,9 +15,14 @@ public class PlaceRestController {
 	PlaceRepositoryService placeRepositoryService;
 
 	@GetMapping("")
-	public List<Place> getByCategory(@RequestParam String category) {
-		return placeRepositoryService.getByCategory(category);
+	public List<Place> findAll() {
+		return placeRepositoryService.findAll();
 	}
+
+//	@GetMapping("")
+//	public List<Place> getByCategory(@RequestParam String category) {
+//		return placeRepositoryService.getByCategory(category);
+//	}
 
 	@PostMapping("")
 	public List<Place> saveAll(@RequestBody List<Place> places) {

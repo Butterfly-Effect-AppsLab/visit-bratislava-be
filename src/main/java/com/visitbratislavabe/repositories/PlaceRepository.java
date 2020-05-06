@@ -13,4 +13,6 @@ public interface PlaceRepository extends JpaRepository<Place, Long> {
 
 	List<Place> getByCategory(String category);
 
+	List<Place> findAll();
+
 }

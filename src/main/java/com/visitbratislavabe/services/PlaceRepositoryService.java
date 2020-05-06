@@ -25,4 +25,8 @@ public class PlaceRepositoryService implements IPlaceRepositoryService {
 		return placeRepository.getByCategory(category);
 	}
 
+	public List<Place> findAll() {
+		return placeRepository.findAll();
+	}
+
 }
