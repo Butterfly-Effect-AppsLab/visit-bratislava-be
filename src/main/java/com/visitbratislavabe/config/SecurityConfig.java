@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.Http403ForbiddenEntryPoint;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -23,11 +24,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http
-				.cors().and().antMatcher("/**").authorizeRequests().antMatchers("/").permitAll()
-				.antMatchers("/oauth2/**").permitAll().anyRequest()
-				.authenticated().and().oauth2Login().successHandler(successHandler).failureUrl("/");
-
-		// ! TODO: add defaultSuccessUrl("/profile")
+				.cors()
+				.and()
+				.antMatcher("/**").authorizeRequests()
+				.antMatchers("/").permitAll()
+				.antMatchers("/oauth2/**").permitAll()
+				.anyRequest().authenticated()
+				.and().oauth2Login().successHandler(successHandler)
+				.defaultSuccessUrl("http://localhost:3000/profile").failureUrl("http://localhost:3000/")
+				.and().exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
 	}
 
 	@Bean
