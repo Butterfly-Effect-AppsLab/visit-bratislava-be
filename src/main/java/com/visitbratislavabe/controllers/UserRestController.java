@@ -22,4 +22,7 @@ public class UserRestController {
 		return userService.getById(userId);
 	}
 
+	@GetMapping("/{userEmail}")
+	public User getUserDetail(@PathVariable String userEmail) { return userService.getByEmail(userEmail); }
+
 }

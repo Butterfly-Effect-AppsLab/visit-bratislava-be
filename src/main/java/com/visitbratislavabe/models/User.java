@@ -4,6 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(name = "users")
 @Entity
@@ -19,6 +20,12 @@ public class User {
 	private String email;
 
 	private String username;
+
+	@OneToMany
+	private List<Itinerary> itineraries;
+
+	@OneToMany
+	private List<Place> places;
 
 	public User() {
 	}

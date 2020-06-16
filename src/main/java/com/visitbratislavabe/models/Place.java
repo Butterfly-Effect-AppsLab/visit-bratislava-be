@@ -36,10 +36,6 @@ public class Place {
 
 	private String category;
 
-	public long getId() {
-		return id;
-	}
-
 	public Place() {
 	}
 
