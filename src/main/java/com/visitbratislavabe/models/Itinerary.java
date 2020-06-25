@@ -22,11 +22,17 @@ public class Itinerary {
 		return id;
 	}
 
+	private String title;
+
 	private String description;
 
 	private String image;
 
 	private String category;
+
+	private String arrivalTime;
+
+	private String departureTime;
 
 	@ManyToMany
 	@JoinTable(name = "itinerary_places", joinColumns = @JoinColumn(name = "itinerary_id"),
@@ -48,7 +54,8 @@ public class Itinerary {
 	public Itinerary() {
 	}
 
-	public Itinerary(String description, String image, String category, Set<Place> places) {
+	public Itinerary(String title, String description, String image, String category, Set<Place> places) {
+		this.title = title;
 		this.description = description;
 		this.image = image;
 		this.category = category;
