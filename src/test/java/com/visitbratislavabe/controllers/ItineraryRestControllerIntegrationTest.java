@@ -74,7 +74,11 @@ public class ItineraryRestControllerIntegrationTest {
 	// TODO - this test does not work properly, need better mocks
 	@Test
 	public void givenItinerary_whenPutItineraryByCategory_thenStatus200() throws Exception {
-		Itinerary itinerary = new Itinerary("newDescription", "newImage", "newCategory", new HashSet<Place>());
+		Itinerary itinerary = new Itinerary();
+		itinerary.setDescription("newDescription");
+		itinerary.setImage("newImage");
+		itinerary.setCategory("newCategory");
+		itinerary.setPlaces(new HashSet<Place>());
 		mvc.perform(put("/api/itineraries").content(TestUtils.asJsonString(itinerary))
 				.contentType(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
 	}

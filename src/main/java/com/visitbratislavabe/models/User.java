@@ -5,6 +5,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.util.List;
+import javax.validation.constraints.Email;
 
 @Table(name = "users")
 @Entity
@@ -17,15 +18,19 @@ public class User {
 	@Column(columnDefinition = "serial")
 	private Long id;
 
+	@Email
 	private String email;
-
-	private String username;
 
 	@OneToMany
 	private List<Itinerary> itineraries;
 
 	@OneToMany
 	private List<Place> places;
+
+	@Column(nullable = false)
+	private String name;
+
+	private String imageUrl;
 
 	public User() {
 	}
