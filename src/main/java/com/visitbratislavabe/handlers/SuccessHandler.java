@@ -24,12 +24,17 @@ public class SuccessHandler implements AuthenticationSuccessHandler {
 			Authentication authentication) throws IOException, ServletException {
 
 		DefaultOAuth2User userDetails = (DefaultOAuth2User) authentication.getPrincipal();
-		if(userRepository.getByEmail((String) userDetails.getAttributes().get("email")) != null) {
+		String userName = (String) userDetails.getAttributes().get("name");
+		String userEmail = (String) userDetails.getAttributes().get("email");
+
+		if(userRepository.getByEmail(userEmail) == null) {
 			User newUser = new User();
-			newUser.setName((String) userDetails.getAttributes().get("name"));
-			newUser.setEmail((String) userDetails.getAttributes().get("email"));
+			newUser.setName(userName);
+			newUser.setEmail(userEmail);
 			userRepository.save(newUser);
 		}
+
+		response.sendRedirect("http://localhost:3000/");
 	}
 
 }

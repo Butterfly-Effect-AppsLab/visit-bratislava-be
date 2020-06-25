@@ -31,7 +31,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 				.antMatchers("/oauth2/**").permitAll()
 				.anyRequest().authenticated()
 				.and().oauth2Login().successHandler(successHandler)
-				.defaultSuccessUrl("http://localhost:3000/profile").failureUrl("http://localhost:3000/")
+				.failureUrl("http://localhost:3000/")
 				.and().exceptionHandling().authenticationEntryPoint(new Http403ForbiddenEntryPoint());
 	}
 
@@ -39,7 +39,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 	protected CorsConfigurationSource corsConfigurationSource() {
 		CorsConfiguration configuration = new CorsConfiguration();
 		configuration.setAllowedOrigins(Arrays.asList("http://localhost:3000"));
-		configuration.setAllowedMethods(Arrays.asList("GET","POST"));
+		configuration.setAllowedMethods(Arrays.asList("GET", "POST", "PUT"));
 		configuration.setAllowCredentials(true);
 		configuration.setAllowedHeaders(Arrays.asList("Origin", "Accept", "X-Requested-With", "Content-Type",
 													"Access-Control-Request-Method", "Access-Control-Request-Headers"));
