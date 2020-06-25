@@ -1,12 +1,11 @@
 package com.visitbratislavabe.models;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.List;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 @Table(name = "users")
 @Entity
@@ -22,10 +21,11 @@ public class User {
 	@Email
 	private String email;
 
-	private String username;
+	@OneToMany
+	private List<Itinerary> itineraries;
 
-	@JsonIgnore
-	private String password;
+	@OneToMany
+	private List<Place> places;
 
 	@Column(nullable = false)
 	private String name;

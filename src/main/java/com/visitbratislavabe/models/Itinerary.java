@@ -19,11 +19,21 @@ public class Itinerary {
 	@Column(columnDefinition = "serial")
 	private long id;
 
+	public long getId() {
+		return id;
+	}
+
+	private String title;
+
 	private String description;
 
 	private String image;
 
 	private String category;
+
+	private String arrivalTime;
+
+	private String departureTime;
 
 	private Date startDate;
 
@@ -43,6 +53,14 @@ public class Itinerary {
 	}
 
 	public Itinerary() {
+	}
+
+	public Itinerary(String title, String description, String image, String category, Set<Place> places) {
+		this.title = title;
+		this.description = description;
+		this.image = image;
+		this.category = category;
+		this.places = places;
 	}
 
 }
