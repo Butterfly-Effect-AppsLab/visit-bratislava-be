@@ -8,4 +8,6 @@ public interface IUserRepositoryService {
 
 	User getById(long userId);
 
+	User getByEmail(String userEmail);
+
 }
