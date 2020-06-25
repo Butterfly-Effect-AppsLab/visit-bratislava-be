@@ -36,32 +36,7 @@ public class Place {
 
 	private String category;
 
-	public long getId() {
-		return id;
-	}
-
 	public Place() {
-	}
-
-	public Place(String name, String latitude, String longitude, String rating, String website, String address,
-			String image, String locationString, String category) {
-		this.name = name;
-
-		this.latitude = latitude;
-
-		this.longitude = longitude;
-
-		this.rating = rating;
-
-		this.website = website;
-
-		this.address = address;
-
-		this.image = image;
-
-		this.locationString = locationString;
-
-		this.category = category;
 	}
 
 }
